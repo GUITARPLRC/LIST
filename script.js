@@ -7,8 +7,9 @@
 	
 	add.addEventListener("click", addItem, false);
 	userText.addEventListener("submit", addItem, false);
-	list.addEventListener("dblclick", removeItem(this), false);
+	list.addEventListener("dblclick", removeItem, false);
 	
+	userText.focus();
 	
 	function addItem() {
 		
@@ -20,9 +21,18 @@
 		userText.focus();
 	}
 	
-	function removeItem(obj) {
+	function getTarget(e) {
 		
-		obj.remove();
+		return e.target || e.srcElement;
+		
+	}
+	
+	function removeItem(e) {
+		
+		target = getTarget(e);
+		list.removeChild(target);
+		
+		userText.focus();
 		
 	}
 	
