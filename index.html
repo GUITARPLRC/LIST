@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Make A List</title>
+		<title>To Do: List Maker</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 	
-		<h1>Make a List</h1>
+		<h1>To Do: List Maker</h1>
 		<ul>
 			<li>Type item into empty box</li>
 			<li>Click add button to add to list</li>
 			<li>Double Click item to remove from list</li>
 		</ul>
+		
+		<input type="text" id="text" maxlength="25"></input>
+		<input type="submit" id="button" value="Add"></input>
 		
 		<div id="frame">My List
 			<ul id="list">
@@ -20,10 +23,6 @@
 				<li>Third Item</li>
 			</ul>
 		</div>
-		
-		
-		<input type="text" id="text" maxlength="25"></input>
-		<input type="submit" id="button" value="Add"></input>
 	
 		<script src="script.js"></script>
 	</body>
