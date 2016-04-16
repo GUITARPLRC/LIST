@@ -34,3 +34,11 @@ h1 {
 #button {
 	padding:5px 10px;
 }
+
+#warn {
+	visibility:hidden;
+}
+
+.warning {
+	border:2px solid red;
+}
