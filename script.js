@@ -11,7 +11,7 @@
 	list.addEventListener("dblclick", removeItem, false);
 	
 	userText.addEventListener("keypress", function(e) {
-		if (e === 13) {
+		if (e.keyCode === 13) {
 			addItem();
 		}
 	}, false);
