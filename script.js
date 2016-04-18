@@ -16,7 +16,7 @@
 		i.addEventListener("dragstart", start, false);
 		i.addEventListener("dragenter", enter, false);
 		i.addEventListener("dragover", over, false);
-		i.addEventListener("gradleave", leave, false);
+		i.addEventListener("dragleave", leave, false);
 		i.addEventListener("drop", drop, false);
 		i.addEventListener("dragend", end, false);
 		
@@ -66,9 +66,12 @@
 	
 	function start(i) {
 		
-		dragSrc = this;
 		i.dataTransfer.effectAllowed = "move";
-		i.dataTransfer.setData("text/html", this.innerHTML);
+		i.dataTransfer.setData("text", this.innerHTML);
+		
+		dragSrc = this;
+		
+		
 		
 	}
 	
@@ -104,7 +107,7 @@
 		
 		if (dragSrc != this) {
 			dragSrc.innerHTML = this.innerHTML;
-			this.innerHTML = i.dataTransfer.getData("text/html");
+			this.innerHTML = i.dataTransfer.getData("text");
 		}
 		
 		return false;
