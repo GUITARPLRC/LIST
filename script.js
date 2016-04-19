@@ -3,9 +3,9 @@
 	var add = document.getElementById("button");
 	var userText = document.getElementById("text");
 	var list = document.getElementById("list");
-	var items = document.querySelectorAll("li");
+	var items = document.getElementsByTagName("li");
 	var warn = document.getElementById("warn");
-	var dragSrc = null;
+	var dragSrc;
 	
 	add.addEventListener("click", addItem, false);
 	userText.addEventListener("submit", addItem, false);
@@ -101,9 +101,7 @@
 	
 	function drop(i) {
 		
-		if(i.stopPropagation) {
-			i.stopPropagation();
-		}
+		i.preventDefault();
 		
 		if (dragSrc != this) {
 			dragSrc.innerHTML = this.innerHTML;
